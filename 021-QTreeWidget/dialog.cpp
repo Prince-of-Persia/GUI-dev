@@ -10,6 +10,7 @@ Dialog::Dialog(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->treeWidget->setColumnCount(2);
+    ui->treeWidget->setHeaderLabels(QStringList() << "one" <<"two");
     AddRoot("1. Hello", "World");
     AddRoot("2. Hello", "World");
     AddRoot("3. Hello", "World");
@@ -37,4 +38,10 @@ void Dialog::AddChild(QTreeWidgetItem *parent, QString name, QString Description
     item->setText(0,name);
     item->setText(1, Description);
     parent->addChild(item);
+}
+
+void Dialog::on_pushButton_clicked()
+{
+    ui->treeWidget->currentItem()->setBackgroundColor(0, Qt::red);
+    ui->treeWidget->currentItem()->setBackgroundColor(1, Qt::blue);
 }
