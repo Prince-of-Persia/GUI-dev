@@ -1,2 +1,2 @@
 # GUI-dev
-General User Interface Development
+Graphical User Interface Development
