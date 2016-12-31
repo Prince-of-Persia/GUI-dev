@@ -1,5 +1,6 @@
 #include <QCoreApplication>
 #include "mythread.h"
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
@@ -13,9 +14,9 @@ int main(int argc, char *argv[])
     myThread mThread3;
     mThread3.name = "mthread3";
 
-    mThread1.start();
+    mThread1.start(QThread::HighestPriority);
     mThread2.start();
-    mThread3.start();
+    mThread3.start(QThread::LowestPriority);
 
     return a.exec();
 }
