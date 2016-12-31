@@ -12,12 +12,29 @@ int main(int argc, char *argv[])
         List.append(i); // add items to the list
     }
 
-    List.removeOne(5); //remove an item
+    //List.removeOne(5); //remove an item
 
+    QListIterator<int> Iter(List); //defualts to index 0 of the list
+    Iter.toBack(); //go to the last Item
+    while(Iter.hasPrevious())
+    {
+        qDebug() << Iter.previous();
+        if(Iter.hasPrevious())
+        {
+            qDebug() << "next... " << Iter.peekPrevious(); //peek an item
+        }
+    }
+    //goes from start to end
+    while (Iter.hasNext())
+    {
+        qDebug() << Iter.next();
+    }
+
+    /*
     foreach(int mNumber, List)
     {
         qDebug() << mNumber; //print the list
     }
-
+    */
     return a.exec();
 }
