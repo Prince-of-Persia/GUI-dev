@@ -10,6 +10,7 @@ public:
     myThread();
     void run();
     QString name;
+    bool Stop;
 };
 
 #endif // MYTHREAD_H

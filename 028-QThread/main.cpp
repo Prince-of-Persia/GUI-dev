@@ -14,9 +14,9 @@ int main(int argc, char *argv[])
     myThread mThread3;
     mThread3.name = "mthread3";
 
-    mThread1.start(QThread::HighestPriority);
-    mThread2.start();
-    mThread3.start(QThread::LowestPriority);
-
+    mThread1.start();
+    //mThread2.start();
+    //mThread3.start();
+    mThread1.Stop = true;
     return a.exec();
 }
